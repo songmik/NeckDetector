@@ -15,7 +15,7 @@
         <androidx.camera.view.PreviewView
             android:id="@+id/viewFinder"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="460dp"
             android:layout_marginBottom="100dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -24,20 +24,20 @@
 
         <ImageView
             android:id="@+id/takeIV"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_marginBottom="35dp"
-            android:background="@drawable/baseline_circle"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="45dp"
+            android:background="@drawable/custom_circle"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
             android:id="@+id/previewIV"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_marginStart="20dp"
-            android:layout_marginBottom="35dp"
+            android:layout_marginBottom="45dp"
             android:background="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
