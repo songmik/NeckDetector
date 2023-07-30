@@ -40,7 +40,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="30dp"
-        android:background="@drawable/rect_solid_20dp_green"
+        android:background="@drawable/rect_solid_20dp_green2"
         android:gravity="center"
         android:text="꾸북이를 찾으러 가볼까요?"
         android:textColor="@color/white"

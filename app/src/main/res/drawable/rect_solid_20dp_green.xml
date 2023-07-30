@@ -4,7 +4,7 @@
 
     <!-- 속에 있는 색 채우기-->
     <solid
-        android:color="@color/green2"/>
+        android:color="@color/green"/>
 
     <!-- 모서리 둥굴게-->
     <corners
