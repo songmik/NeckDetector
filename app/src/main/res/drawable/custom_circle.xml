@@ -4,7 +4,7 @@
     <item>
         <shape
             android:shape="oval">
-            <solid android:color="@color/green" /> <!-- 외부 원의 색상 설정 -->
+            <solid android:color="@color/green2" /> <!-- 외부 원의 색상 설정 -->
         </shape>
     </item>
     <!-- 내부 원 모양 (뚤린 부분) -->

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- 속에 있는 색 채우기-->
+    <solid
+        android:color="@color/green2"/>
+
+    <!-- 모서리 둥굴게-->
+    <corners
+        android:radius="20dp"/>
+
+</shape>

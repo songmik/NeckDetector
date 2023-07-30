@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.PermissionActivity">
+
+    <TextView
+        android:id="@+id/mainTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="80dp"
+        android:text="어플 사용을 위해 \n접근 권한을 설정해주세요."
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/ringLL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="100dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mainTV">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/ring" />
+
+        <TextView
+            android:layout_marginStart="10dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="알림" />
+
+        <TextView
+            android:layout_marginStart="5dp"
+            android:textSize="13sp"
+            android:textColor="@color/graybd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(선택)" />
+
+        <TextView
+            android:layout_marginStart="28dp"
+            android:textSize="16sp"
+            android:textColor="@color/graybd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="알림 메세지 발송" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/cameraLL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ringLL">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/camera" />
+
+        <TextView
+            android:layout_marginStart="10dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="카메라" />
+
+
+        <TextView
+            android:layout_marginStart="50dp"
+            android:textSize="16sp"
+            android:textColor="@color/graybd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="거북목 측정 촬영" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/photoLL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cameraLL">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/photos" />
+
+        <TextView
+            android:layout_marginStart="10dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="사진" />
+
+
+        <TextView
+            android:layout_marginStart="64dp"
+            android:textSize="16sp"
+            android:textColor="@color/graybd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="거북목 측정 이미지 첨부" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/faceLL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/photoLL">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/face" />
+
+        <TextView
+            android:layout_marginStart="10dp"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Face ID" />
+
+        <TextView
+            android:layout_marginStart="43dp"
+            android:textSize="16sp"
+            android:textColor="@color/graybd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="로그인 및 촬영 기록 보관" />
+
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/faceLL"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:background="@color/grayf6"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/divider"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="40dp"
+        android:textColor="@color/gray54"
+        android:layout_marginTop="40dp"
+        android:text="권한을 이용하지 않아도 꾸북이탐지기 이용은\n가능하지만 일부 서비스가 제한될 수 있습니다."
+        android:layout_height="wrap_content"/>
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/startButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/rect_solid_20dp_green"
+        android:gravity="center"
+        android:text="확인"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

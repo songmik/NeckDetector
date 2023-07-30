@@ -39,13 +39,20 @@ class CameraFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         startCamera()
-
+        //  초기화
         outputDirectory = getOutputDirectory()
-
         cameraExecutor = Executors.newSingleThreadExecutor()
 
         binding.takeIV.setOnClickListener {
             takePhoto()
+        }
+
+        binding.photoIV.setOnClickListener {
+
+        }
+
+        binding.turnIV.setOnClickListener {
+            // 카메라 화면 전환하는 부분
         }
     }
 
@@ -77,7 +84,17 @@ class CameraFragment : Fragment() {
                     Log.d("CameraFragment", msg)
                     // 여기서 사진을 저장한 후 필요한 작업을 수행할 수 있습니다.
 
-                    binding.previewIV.setImageURI(savedUri)
+                    // 미리보기 수행하는 방법
+                    //binding.previewIV.setImageURI(savedUri)
+                    val selectFragment = SelectFragment()
+                    val bundle = Bundle()
+                    bundle.putParcelable("photoUri", savedUri)
+                    selectFragment.arguments = bundle
+
+                    parentFragmentManager.beginTransaction()
+                        .replace(R.id.cameraContainer, selectFragment)
+                        .addToBackStack(null)
+                        .commit()
                 }
 
                 override fun onError(exception: ImageCaptureException) {

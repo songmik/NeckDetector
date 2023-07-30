@@ -1,4 +1,4 @@
-package com.mj.neckdetector.ui
+package com.mj.neckdetector.ui.activity
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -16,6 +16,8 @@ import com.mj.neckdetector.databinding.ActivityMainBinding
 import com.mj.neckdetector.ui.fragment.CameraFragment
 import com.mj.neckdetector.ui.fragment.HomeFragment
 import com.mj.neckdetector.ui.fragment.MyFragment
+import com.mj.neckdetector.ui.fragment.ToolFragment
+import com.mj.neckdetector.utils.SharedPreferencesManager
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,6 +26,7 @@ class MainActivity : AppCompatActivity() {
     private val homeFragment = HomeFragment()
     private val cameraFragment = CameraFragment()
     private val myFragment = MyFragment()
+    private val toolFragment = ToolFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,13 +42,42 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigation.setOnItemSelectedListener { item ->
             when(item.itemId) {
                 R.id.homeFragment -> setCurrentFragment(homeFragment)
-                R.id.camaraFragment -> setCurrentFragment(cameraFragment)
+                R.id.camaraFragment -> firstCameraFragment()
                 R.id.myFragment -> setCurrentFragment(myFragment)
 
             }
             true
         }
 
+    }
+
+    // ToolFragment에서 CameraFragment로 전환하는 메서드
+    fun switchToCameraFragment() {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.frameLayout, cameraFragment)
+            .addToBackStack(null)
+            .commit()
+    }
+
+    private fun firstCameraFragment()   {
+        val isFirstRun = SharedPreferencesManager.getFirstRun()
+        if (isFirstRun) {
+            // CameraFragment를 배경으로 먼저 추가합니다.
+            supportFragmentManager.beginTransaction()
+                .add(R.id.frameLayout, cameraFragment)
+                .commit()
+
+            // ToolFragment를 위에 추가합니다.
+            supportFragmentManager.beginTransaction()
+                .add(R.id.frameLayout, toolFragment)
+                .commit()
+
+            SharedPreferencesManager.setFirstRun(false)
+        } else {
+            supportFragmentManager.beginTransaction()
+                .add(R.id.frameLayout, CameraFragment())
+                .commit()
+        }
     }
 
     private fun setCurrentFragment(fragment: Fragment) {

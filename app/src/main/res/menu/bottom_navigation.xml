@@ -3,17 +3,17 @@
 
     <item
         android:id="@+id/homeFragment"
-        android:icon="@drawable/baseline_home"
+        android:icon="@drawable/home"
         android:title="홈" />
 
     <item
         android:id="@+id/camaraFragment"
-        android:icon="@drawable/baseline_camera"
-        android:title="카메라" />
+        android:icon="@drawable/turtle"
+        android:title="측정소" />
 
     <item
         android:id="@+id/myFragment"
-        android:icon="@drawable/baseline_my"
+        android:icon="@drawable/outline_account_circle"
         android:title="마이" />
 
 </menu>

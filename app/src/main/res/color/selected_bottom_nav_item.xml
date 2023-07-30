@@ -4,6 +4,6 @@
         <item android:color="@color/gray" android:state_checked="false" />
 
         <!-- 아이템이 선택된 상태(클릭한 상태) -->
-        <item android:color="@android:color/black" android:state_checked="true" />
+        <item android:color="@color/green2" android:state_checked="true" />
 
 </selector>

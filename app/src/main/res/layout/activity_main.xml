@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.MainActivity">
+    tools:context=".ui.activity.MainActivity">
 
     <FrameLayout
         android:id="@+id/frameLayout"
@@ -33,9 +33,9 @@
         android:paddingTop="10dp"
         android:paddingEnd="20dp"
         android:paddingBottom="10dp"
-        app:itemActiveIndicatorStyle="@color/white"
+        app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"
         app:itemIconTint="@color/selected_bottom_nav_item"
-        app:itemTextColor="@color/selected_bottom_nav_item"
+        app:itemTextColor="@color/selected_bottom_nav_item_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
