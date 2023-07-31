@@ -38,8 +38,8 @@ class SelectFragment : Fragment() {
         }
 
         binding.useLL.setOnClickListener {
-            // 사진을 딥러닝 -> 측정 화면으로 넘기기
             val intent = Intent(activity, MeasureActivity::class.java)
+            intent.putExtra("photoUri", photoUri)
             startActivity(intent)
         }
     }
