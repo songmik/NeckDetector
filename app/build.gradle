@@ -55,11 +55,12 @@ dependencies {
     implementation "androidx.camera:camera-view:${camerax_version}"
     implementation "androidx.camera:camera-extensions:${camerax_version}"
 
-    implementation 'me.relex:circleindicator:2.1.6'
-
     // 딥러닝 모델 사용을 위한 라이브러리
     implementation 'org.tensorflow:tensorflow-lite:2.7.0'
 
     // 확률 그래프 라이브러리
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    // Lottie 라이브러리
+    implementation 'com.airbnb.android:lottie:3.7.0'
 }

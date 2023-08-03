@@ -37,7 +37,8 @@ class PermissionActivity : AppCompatActivity() {
     private fun checkPermissions() {
         val arrayPermission = arrayOf(
             Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE,
-            Manifest.permission.USE_BIOMETRIC, Manifest.permission.POST_NOTIFICATIONS
+            Manifest.permission.USE_BIOMETRIC, Manifest.permission.POST_NOTIFICATIONS,
+            Manifest.permission.VIBRATE
         )
 
         val permission = mutableMapOf<String, String>()
@@ -45,6 +46,7 @@ class PermissionActivity : AppCompatActivity() {
         permission["READ_EXTERNAL_STORAGE"] = Manifest.permission.READ_EXTERNAL_STORAGE
         permission["USE_BIOMETRIC"] = Manifest.permission.USE_BIOMETRIC
         permission["POST_NOTIFICATIONS"] = Manifest.permission.POST_NOTIFICATIONS
+        permission["VIBRATE"] = Manifest.permission.VIBRATE
 
         val denied = permission.count {
             ContextCompat.checkSelfPermission(

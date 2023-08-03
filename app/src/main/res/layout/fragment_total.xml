@@ -2,12 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/totalCL"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@drawable/total_back">
 
     <TextView
-        android:id="@+id/mainTV"
+        android:id="@+id/nicknameTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -17,6 +18,17 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="일자목님은" />
 
+    <ImageView
+        android:id="@+id/shareIV"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/share"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/nicknameTV"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/totalTV"
         android:layout_width="wrap_content"
@@ -25,8 +37,8 @@
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mainTV"
-        tools:text="꾸북이" />
+        app:layout_constraintTop_toBottomOf="@id/nicknameTV"
+        tools:text="꾸북보스" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -37,32 +49,116 @@
         app:layout_constraintBottom_toBottomOf="@id/totalTV"
         app:layout_constraintStart_toEndOf="@id/totalTV" />
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/paintCL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/totalTV">
+
+
+        <ImageView
+            android:id="@+id/bottomBackIV"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/bottom"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageView
+            android:id="@+id/goobokIV"
+            android:layout_width="190dp"
+            android:layout_height="240dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/step_three"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     <TextView
+        android:id="@+id/levelTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:text="꾸북이 보스가 되지 않게 주의하십시오."
-        android:textSize="14sp"
+        android:background="@drawable/rect_solid_10dp_green"
+        android:paddingStart="7dp"
+        android:paddingEnd="5dp"
+        android:text="Lv.2"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/totalTV" />
+        app:layout_constraintTop_toBottomOf="@id/paintCL" />
+
+    <TextView
+        android:id="@+id/nameTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/levelTV"
+        tools:text="꾸북보스" />
 
     <LinearLayout
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nameTV">
+
+        <TextView
+            android:id="@+id/totalOneTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="영원한 꾸북이로 남으실 건가요?"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/totalTwoTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="지금은 거북목이 높게 측정 되었을 수도 있지만, \n꾸준한 운동과 치료를 통해 호전될 수 있습니다."
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/totalThreeTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="꾸북이탐지기가 관리할 수 있도록 도와드릴게요."
+            android:textSize="14sp" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginBottom="40dp"
         android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/reButton"
             android:layout_width="180dp"
             android:layout_height="60dp"
-            android:background="@drawable/rect_solid_20dp_green"
+            android:background="@drawable/rect_solid_10dp_white"
             android:gravity="center"
-            android:text="다시 측정하기"
+            android:text="홈으로 가기"
             android:textColor="@color/green2"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -75,12 +171,11 @@
             android:layout_marginStart="15dp"
             android:background="@drawable/rect_solid_20dp_green2"
             android:gravity="center"
-            android:text="목 스트레칭하기"
+            android:text="목 스트레칭하러 가기"
             android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent" />
-
 
     </LinearLayout>
 

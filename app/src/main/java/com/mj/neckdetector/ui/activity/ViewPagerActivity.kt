@@ -9,13 +9,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.mj.neckdetector.adpter.ViewPagerAdapter
 import com.mj.neckdetector.databinding.ActivityViewPagerBinding
-import me.relex.circleindicator.CircleIndicator3
 
 class ViewPagerActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityViewPagerBinding
     private lateinit var viewPager: ViewPager2
-    private lateinit var indicator: CircleIndicator3
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,11 +23,9 @@ class ViewPagerActivity : AppCompatActivity() {
         hideBottomBar()
 
         viewPager = binding.viewPager
-        indicator = binding.indicator
 
         val adapter = ViewPagerAdapter(this)
         viewPager.adapter = adapter
-        indicator.setViewPager(viewPager)
     }
 
 

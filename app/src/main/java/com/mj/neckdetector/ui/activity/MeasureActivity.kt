@@ -3,17 +3,16 @@ package com.mj.neckdetector.ui.activity
 import android.content.res.AssetManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.graphics.Color
 import android.net.Uri
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowInsetsController
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
@@ -41,11 +40,60 @@ class MeasureActivity : AppCompatActivity() {
 
         hideBottomBar()
 
-        binding.nextButton.setOnClickListener {
-            replaceFragment(TotalFragment())
-        }
-
         val bundle = intent.extras
+        val galleryUriString: Uri ?= intent.getParcelableExtra("galleryUri")
+        if (galleryUriString != null) {
+            val galleryUri = Uri.parse(galleryUriString.toString())
+
+            Log.e("uri Test", "$galleryUri")
+            try {
+                val inputStream = this.contentResolver.openInputStream(galleryUriString)
+                val bitmap = BitmapFactory.decodeStream(inputStream)
+
+                val scaledBitmap = Bitmap.createScaledBitmap(bitmap, modelInputSize, modelInputSize, false)
+                val byteBuffer = convertBitmapToByteBuffer(scaledBitmap)
+
+                // Load and run TensorFlow Lite model
+                tflite = Interpreter(loadModelFile())
+
+                val modelOutputShape = tflite.getOutputTensor(0).shape()
+                val outputArray = Array(modelOutputShape[0]) { FloatArray(modelOutputShape[1]) }
+
+                tflite.run(byteBuffer, outputArray)
+
+                var highestProbability = 0.0f
+                var highestProbabilityClassIndex = -1
+                for (i in 0 until modelOutputShape[1]) {
+                    if (outputArray[0][i] > highestProbability) {
+                        highestProbability = outputArray[0][i]
+                        highestProbabilityClassIndex = i
+                    }
+                }
+
+                if (highestProbabilityClassIndex != -1) {
+                    val highPercentage = (highestProbability * 100).toInt()
+                    val lowPercentage = 100-highPercentage
+
+                    binding.percentTV.text = "${highPercentage}%"
+                    val totalFragment = TotalFragment()
+                    val bundle = Bundle()
+                    bundle.putInt("highPercentage", highPercentage)
+                    totalFragment.arguments = bundle
+
+                    binding.nextButton.setOnClickListener {
+                        replaceFragment(totalFragment)
+                        binding.nextButton.visibility = View.GONE
+                    }
+
+                    Log.w("결과", "거북목 될 확률 : $highPercentage")
+                    Log.w("결과", "거북목 아닐 확률 : $lowPercentage")
+
+                    displayChart(highPercentage, lowPercentage)
+                }
+            } catch (e:IOException) {
+
+            }
+        }
 
         // 넘겨 받은 uri를 이용해서 모델에 넣는 곳 -> 널처리 안하면 에러 발생
         val imageUriString: Uri ? = bundle?.getParcelable("photoUri")
@@ -79,6 +127,16 @@ class MeasureActivity : AppCompatActivity() {
                 if (highestProbabilityClassIndex != -1) {
                     val highPercentage = (highestProbability * 100).toInt()
                     val lowPercentage = 100-highPercentage
+                    binding.percentTV.text = "${highPercentage}%"
+
+                    val totalFragment = TotalFragment()
+                    val bundle = Bundle()
+                    bundle.putInt("highPercentage", highPercentage)
+                    totalFragment.arguments = bundle
+                    binding.nextButton.setOnClickListener {
+                        replaceFragment(totalFragment)
+                        binding.nextButton.visibility = View.GONE
+                    }
                     Log.w("결과", "거북목 될 확률 : $highPercentage")
                     Log.w("결과", "거북목 아닐 확률 : $lowPercentage")
 
@@ -97,12 +155,14 @@ class MeasureActivity : AppCompatActivity() {
         pieEntries.add(PieEntry(low.toFloat(), ""))
 
         val colors = ArrayList<Int>()
-        colors.add(Color.GREEN)
-        colors.add(Color.TRANSPARENT)
+        colors.add(ContextCompat.getColor(applicationContext, R.color.pink))
+        colors.add(ContextCompat.getColor(applicationContext, R.color.grayf8))
 
         // PieDataSet 생성 및 데이터와 레이블 설정
         val pieDataSet = PieDataSet(pieEntries, null)
         pieDataSet.colors = colors
+        pieDataSet.label = ""
+        pieDataSet.setDrawValues(false)
 
         // PieData에 PieDataSet 설정
         val pieData = PieData(pieDataSet)
@@ -110,13 +170,12 @@ class MeasureActivity : AppCompatActivity() {
         // 차트에 서식 적용
         binding.chart.apply {
             data = pieData
-            //setUsePercentValues(true)
+            setUsePercentValues(false)
             description.isEnabled = false
-            legend.isEnabled = true
+            legend.isEnabled = false
             animateY(3000)
             invalidate()
         }
-
     }
 
     // 딥러닝 모델 파일을 가져와 읽는 함수
@@ -152,7 +211,6 @@ class MeasureActivity : AppCompatActivity() {
     private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.measureContainer, fragment)
-            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
             .addToBackStack(null)
             .commit()
     }

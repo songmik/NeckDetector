@@ -38,17 +38,18 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/reIV"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/re"
-                    app:tint="@color/selected_photo_item" />
+                    android:background="@drawable/re" />
 
                 <TextView
+                    android:id="@+id/reTV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="다시 찍기"
-                    android:textColor="@color/selected_photo_item"
+                    android:textColor="@color/gray75"
                     android:textSize="15sp" />
 
 
@@ -63,16 +64,18 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/useIV"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_gravity="center"
                     android:background="@drawable/baseline_done" />
 
                 <TextView
+                    android:id="@+id/useTV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="사진 사용"
-                    android:textColor="@color/selected_photo_item"
+                    android:textColor="@color/gray75"
                     android:textSize="15sp" />
 
 

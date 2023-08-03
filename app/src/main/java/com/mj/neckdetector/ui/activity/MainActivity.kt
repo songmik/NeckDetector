@@ -13,9 +13,9 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.mj.neckdetector.R
 import com.mj.neckdetector.databinding.ActivityMainBinding
-import com.mj.neckdetector.ui.fragment.CameraFragment
-import com.mj.neckdetector.ui.fragment.HomeFragment
-import com.mj.neckdetector.ui.fragment.MyFragment
+import com.mj.neckdetector.ui.fragment.navigation.CameraFragment
+import com.mj.neckdetector.ui.fragment.navigation.HomeFragment
+import com.mj.neckdetector.ui.fragment.navigation.MyFragment
 import com.mj.neckdetector.ui.fragment.ToolFragment
 import com.mj.neckdetector.utils.SharedPreferencesManager
 
@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 
-    private fun firstCameraFragment()   {
+    fun firstCameraFragment()   {
         val isFirstRun = SharedPreferencesManager.getFirstRun()
         if (isFirstRun) {
             // CameraFragment를 배경으로 먼저 추가합니다.
