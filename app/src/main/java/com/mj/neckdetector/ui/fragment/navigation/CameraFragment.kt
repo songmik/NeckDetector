@@ -10,7 +10,6 @@ import android.os.VibrationEffect
 import android.os.Vibrator
 import android.provider.MediaStore
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,6 +20,7 @@ import androidx.camera.core.ImageCaptureException
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import com.mj.neckdetector.R
 import com.mj.neckdetector.databinding.FragmentCameraBinding
 import com.mj.neckdetector.ui.activity.MeasureActivity
@@ -76,8 +76,17 @@ class CameraFragment : Fragment() {
 
         binding.turnIV.setOnClickListener {
             // 카메라 화면 전환하는 부분
-            bindPreview(cameraProvider!!)
+            toggleCamera()
         }
+    }
+
+    private fun toggleCamera() {
+        lensFacingDirection = if (lensFacingDirection == CameraSelector.DEFAULT_BACK_CAMERA) {
+            CameraSelector.DEFAULT_FRONT_CAMERA
+        } else {
+            CameraSelector.DEFAULT_BACK_CAMERA
+        }
+        bindPreview(cameraProvider!!)
     }
 
     private fun startCamera() {
