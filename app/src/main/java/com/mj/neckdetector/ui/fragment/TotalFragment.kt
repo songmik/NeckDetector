@@ -45,7 +45,7 @@ class TotalFragment : Fragment() {
                 in 0..25 -> {
                     binding.totalTV.text = "꾸북이 사냥꾼"
                     binding.goobokIV.setBackgroundResource(R.drawable.step_one)
-                    binding.levelTV.text = "Lv.4"
+                    binding.levelTV.text = "Lv.1"
                     binding.nameTV.text = "꾸북이 사냥꾼"
                     binding.totalOneTV.text = "훌륭해요! 하지만 방심은 금물입니다."
                     binding.totalTwoTV.text = "거북목은 예기치 않게 발생할 수 있는 문제이기 때문에, \n계속해서 관리하고 정기적인 스트레칭과 운동을 통해"
@@ -56,7 +56,7 @@ class TotalFragment : Fragment() {
                 in 26..50 -> {
                     binding.totalTV.text = "예비 꾸북이"
                     binding.goobokIV.setBackgroundResource(R.drawable.step_two)
-                    binding.levelTV.text = "Lv.3"
+                    binding.levelTV.text = "Lv.2"
                     binding.nameTV.text = "예비 꾸북이"
                     binding.totalOneTV.text = "꾸북이가 될 가능성이 보여요!"
                     binding.totalTwoTV.text = "꾸북이탐지기와 함께 거북목을 예방하고 관리하면"
@@ -67,7 +67,7 @@ class TotalFragment : Fragment() {
                 in 51..75 -> {
                     binding.totalTV.text = "꾸북이"
                     binding.goobokIV.setBackgroundResource(R.drawable.step_three)
-                    binding.levelTV.text = "Lv.2"
+                    binding.levelTV.text = "Lv.3"
                     binding.nameTV.text = "꾸북이"
                     binding.totalOneTV.text = "꾸북보스가 되지 않게 조심하세요."
                     binding.totalTwoTV.text = "지금은 2단계이지만, 정기적 스트레칭과 올바른\n자세 관리로 더 나은 상태로 이끌 수 있습니다."
@@ -78,7 +78,7 @@ class TotalFragment : Fragment() {
                 in 76..100 -> {
                     binding.totalTV.text = "꾸북보스"
                     binding.goobokIV.setBackgroundResource(R.drawable.step_four)
-                    binding.levelTV.text = "Lv.1"
+                    binding.levelTV.text = "Lv.4"
                     binding.nameTV.text = "꾸북보스"
                     binding.totalOneTV.text = "영원한 꾸북이로 남으실 건가요?"
                     binding.totalTwoTV.text = "지금은 거북목이 높게 측정 되었을 수도 있지만, \n꾸준한 운동과 치료를 통해 호전될 수 있습니다."

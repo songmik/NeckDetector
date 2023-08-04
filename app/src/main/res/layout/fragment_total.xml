@@ -24,7 +24,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="100dp"
         android:layout_marginTop="80dp"
-        android:background="@drawable/share"
+        android:background="@drawable/gray_save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/nicknameTV"
         app:layout_constraintTop_toTopOf="parent" />
@@ -91,7 +91,7 @@
         android:background="@drawable/rect_solid_10dp_green"
         android:paddingStart="7dp"
         android:paddingEnd="5dp"
-        android:text="Lv.2"
+        android:text="Lv.4"
         android:textColor="@color/white"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"

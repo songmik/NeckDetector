@@ -124,10 +124,10 @@
             </HorizontalScrollView>
 
             <ImageView
-                android:layout_marginTop="3dp"
                 android:id="@+id/bannerIV"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
+                android:layout_marginTop="3dp"
                 android:background="@drawable/banner"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -208,6 +208,15 @@
                         android:textColor="@color/gray33"
                         android:textSize="13sp" />
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="99,000 원"
+                        android:textColor="@color/gray33"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
                 </LinearLayout>
 
 
@@ -234,9 +243,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"
-                        android:text="디닥넥 바른자세 목 스트레칭기\n띠라렉"
+                        android:text="[입점이벤트] 허먼밀러 에어론\n체어 풀 그라파이트"
                         android:textColor="@color/gray33"
                         android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="2,424,000 원"
+                        android:textColor="@color/gray33"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -269,7 +287,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:text="디스크닥터"
+                        android:text="넥닥터"
                         android:textColor="@color/gray94"
                         android:textSize="13sp" />
 
@@ -277,9 +295,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"
-                        android:text="디닥넥 바른자세 목 스트레칭기\n띠라렉"
+                        android:text="경추베개 거북목 일자목\n(+커버증정)"
                         android:textColor="@color/gray33"
                         android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="149,000원"
+                        android:textColor="@color/gray33"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -299,7 +326,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:text="디스크닥터"
+                        android:text="클럭"
                         android:textColor="@color/gray94"
                         android:textSize="13sp" />
 
@@ -307,9 +334,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"
-                        android:text="디닥넥 바른자세 목 스트레칭기\n띠라렉"
+                        android:text="목, 어깨 안마기 부모님 효도\n선물 세트 건강 마사지"
                         android:textColor="@color/gray33"
                         android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="96,000원"
+                        android:textColor="@color/gray33"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -342,7 +378,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:text="디스크닥터"
+                        android:text="Curble"
                         android:textColor="@color/gray94"
                         android:textSize="13sp" />
 
@@ -350,9 +386,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"
-                        android:text="디닥넥 바른자세 목 스트레칭기\n띠라렉"
+                        android:text="[더스트백 증정] 커블체어 월간\n할인전 모음"
                         android:textColor="@color/gray33"
                         android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="99,000원"
+                        android:textColor="@color/gray33"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -372,7 +417,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:text="디스크닥터"
+                        android:text="휴플러스"
                         android:textColor="@color/gray94"
                         android:textSize="13sp" />
 
@@ -380,9 +425,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"
-                        android:text="디닥넥 바른자세 목 스트레칭기\n띠라렉"
+                        android:text="무선 목 어깨 안마기 마사지기\nCordzero-750"
                         android:textColor="@color/gray33"
                         android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="53,000원"
+                        android:textColor="@color/gray33"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -395,8 +449,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/threePhotoLL" />
-
-
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
