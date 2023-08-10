@@ -11,6 +11,7 @@
         android:id="@+id/nicknameTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/gray22"
         android:layout_marginStart="40dp"
         android:layout_marginTop="80dp"
         android:textSize="25sp"
@@ -34,6 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
+        android:textColor="@color/gray22"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,6 +45,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/gray22"
         android:layout_marginStart="5dp"
         android:text="입니다."
         android:textSize="25sp"
@@ -87,7 +90,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/rect_solid_10dp_green"
         android:paddingStart="7dp"
         android:paddingEnd="5dp"
@@ -103,6 +106,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/gray22"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -113,6 +118,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -121,9 +127,9 @@
 
         <TextView
             android:id="@+id/totalOneTV"
+            android:textColor="@color/gray22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:text="영원한 꾸북이로 남으실 건가요?"
             android:textSize="14sp" />
 
@@ -131,6 +137,7 @@
             android:id="@+id/totalTwoTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/gray22"
             android:text="지금은 거북목이 높게 측정 되었을 수도 있지만, \n꾸준한 운동과 치료를 통해 호전될 수 있습니다."
             android:textSize="14sp" />
 
@@ -138,6 +145,7 @@
             android:id="@+id/totalThreeTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/gray22"
             android:text="꾸북이탐지기가 관리할 수 있도록 도와드릴게요."
             android:textSize="14sp" />
 

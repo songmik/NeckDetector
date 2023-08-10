@@ -1,10 +1,10 @@
 package com.mj.neckdetector.ui.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.mj.neckdetector.R
 import com.mj.neckdetector.databinding.FragmentFindNeckBinding
 
@@ -26,25 +26,47 @@ class FindNeckFragment : Fragment() {
         }
 
         binding.exerciseOne.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.findNeckCL, PointFragment())
-                .addToBackStack(null)
-                .commit()
+            replaceFragment(PointFragment())
         }
 
         binding.exerciseTwo.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.findNeckCL, PointFragment())
-                .addToBackStack(null)
-                .commit()
+            replaceFragment(PointFragment())
         }
 
         binding.exerciseThree.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.findNeckCL, PointFragment())
-                .addToBackStack(null)
-                .commit()
+            replaceFragment(PointFragment())
         }
+
+        binding.exerciseFour.setOnClickListener {
+            replaceFragment(PointFragment())
+        }
+
+        binding.exerciseFive.setOnClickListener {
+            replaceFragment(PointFragment())
+        }
+
+        binding.exerciseSix.setOnClickListener {
+            replaceFragment(PointFragment())
+        }
+
+        binding.exerciseSeven.setOnClickListener {
+            replaceFragment(PointFragment())
+        }
+
+        binding.exerciseEight.setOnClickListener {
+            replaceFragment(PointFragment())
+        }
+
+        binding.exerciseNine.setOnClickListener {
+            replaceFragment(PointFragment())
+        }
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.findNeckCL, fragment)
+            .addToBackStack(null)
+            .commit()
     }
 
     override fun onDestroyView() {

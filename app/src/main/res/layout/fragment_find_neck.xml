@@ -76,6 +76,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:textColor="@color/gray22"
                             android:text="데일리루틴"
                             android:textSize="18sp" />
 
@@ -93,6 +94,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginStart="15dp"
+                        android:textColor="@color/gray22"
                         android:text="장기루틴"
                         android:textSize="18sp" />
 
@@ -100,6 +102,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:textColor="@color/gray22"
                         android:layout_marginStart="15dp"
                         android:text="인기운동"
                         android:textSize="18sp" />
@@ -109,6 +112,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginStart="15dp"
+                        android:textColor="@color/gray22"
                         android:text="부위별운동"
                         android:textSize="18sp" />
 
@@ -116,6 +120,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:textColor="@color/gray22"
                         android:layout_marginStart="15dp"
                         android:text="마사지"
                         android:textSize="18sp" />
@@ -139,6 +144,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="어깨 펼 시간이에요!"
+                    android:textColor="@color/gray22"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
@@ -168,12 +174,14 @@
                         android:background="@drawable/stretch" />
 
                     <ImageView
+                        android:id="@+id/exerciseFour"
                         android:layout_width="180dp"
                         android:layout_height="220dp"
                         android:layout_marginStart="20dp"
                         android:background="@drawable/stretch_two" />
 
                     <ImageView
+                        android:id="@+id/exerciseFive"
                         android:layout_width="180dp"
                         android:layout_height="220dp"
                         android:layout_marginStart="20dp"
@@ -201,6 +209,7 @@
 
                 <TextView
                     android:layout_width="wrap_content"
+                    android:textColor="@color/gray22"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="바른 자세를 위한 등근육 운동"
@@ -234,12 +243,14 @@
                         android:background="@drawable/stretch_three" />
 
                     <ImageView
+                        android:id="@+id/exerciseSix"
                         android:layout_width="180dp"
                         android:layout_height="220dp"
                         android:layout_marginStart="20dp"
                         android:background="@drawable/stretch_four" />
 
                     <ImageView
+                        android:id="@+id/exerciseSeven"
                         android:layout_width="180dp"
                         android:layout_height="220dp"
                         android:layout_marginStart="20dp"
@@ -268,6 +279,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:textColor="@color/gray22"
                     android:text="허리가 뻐근할 때 해볼까요?"
                     android:textSize="15sp"
                     android:textStyle="bold" />
@@ -298,12 +310,14 @@
                         android:background="@drawable/stretch_five" />
 
                     <ImageView
+                        android:id="@+id/exerciseEight"
                         android:layout_width="180dp"
                         android:layout_height="220dp"
                         android:layout_marginStart="20dp"
                         android:background="@drawable/stretch_six" />
 
                     <ImageView
+                        android:id="@+id/exerciseNine"
                         android:layout_width="180dp"
                         android:layout_height="220dp"
                         android:layout_marginStart="20dp"

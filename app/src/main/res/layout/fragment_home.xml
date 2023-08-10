@@ -40,6 +40,7 @@
 
             <TextView
                 android:id="@+id/nameTV"
+                android:textColor="@color/gray22"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
@@ -51,6 +52,7 @@
 
             <TextView
                 android:id="@+id/stTV"
+                android:textColor="@color/gray22"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
@@ -118,6 +120,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/gray22"
                         android:text="꾸북이 측정소"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -149,6 +152,7 @@
                     android:padding="17dp">
 
                     <TextView
+                        android:textColor="@color/gray22"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="꾸북이 도감"
@@ -194,6 +198,7 @@
                     android:padding="17dp">
 
                     <TextView
+                        android:textColor="@color/gray22"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="꾸북이 사냥"
@@ -226,6 +231,7 @@
                     android:padding="17dp">
 
                     <TextView
+                        android:textColor="@color/gray22"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="꾸북이 감시"
@@ -261,6 +267,7 @@
                 app:layout_constraintTop_toBottomOf="@id/nextMeasureLL">
 
                 <TextView
+                    android:textColor="@color/gray22"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="이 상품 놓치지 마세요!"
@@ -273,6 +280,7 @@
                     android:layout_weight="1" />
 
                 <TextView
+                    android:textColor="@color/gray22"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="더보기"

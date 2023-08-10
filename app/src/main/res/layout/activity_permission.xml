@@ -12,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
+        android:textColor="@color/gray22"
         android:layout_marginTop="80dp"
         android:text="어플 사용을 위해 \n접근 권한을 설정해주세요."
         android:textSize="25sp"
@@ -36,6 +37,7 @@
         <TextView
             android:layout_marginStart="10dp"
             android:textSize="16sp"
+            android:textColor="@color/gray22"
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -79,6 +81,7 @@
             android:layout_marginStart="10dp"
             android:textSize="16sp"
             android:textStyle="bold"
+            android:textColor="@color/gray22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="카메라" />
@@ -114,6 +117,7 @@
             android:layout_marginStart="10dp"
             android:textSize="16sp"
             android:textStyle="bold"
+            android:textColor="@color/gray22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="사진" />
@@ -149,6 +153,7 @@
             android:layout_marginStart="10dp"
             android:textSize="16sp"
             android:layout_width="wrap_content"
+            android:textColor="@color/gray22"
             android:layout_height="wrap_content"
             android:text="Face ID" />
 
