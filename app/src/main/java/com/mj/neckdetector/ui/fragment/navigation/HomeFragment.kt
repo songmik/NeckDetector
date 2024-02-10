@@ -73,7 +73,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
         }
 
         binding.galleryLL.setOnClickListener {
-            openGallery()
+            val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+            galleryLauncher.launch(intent)
         }
 
         binding.huntLL.setOnClickListener {
@@ -101,8 +102,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
             .commit()
     }
 
-    private fun openGallery() {
-        val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-        galleryLauncher.launch(intent)
-    }
+//    private fun openGallery() {
+//        val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+//        galleryLauncher.launch(intent)
+//    }
 }
