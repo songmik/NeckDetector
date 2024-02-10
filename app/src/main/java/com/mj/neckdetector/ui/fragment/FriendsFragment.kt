@@ -4,30 +4,26 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.mj.neckdetector.base.BaseFragment
 import com.mj.neckdetector.databinding.FragmentFriendsBinding
+import com.mj.neckdetector.viewmodel.fragment.FriendsViewModel
 
-class FriendsFragment : Fragment() {
+class FriendsFragment : BaseFragment<FragmentFriendsBinding, FriendsViewModel>() {
 
-    private var _binding : FragmentFriendsBinding ?= null
-    private val binding get() = _binding!!
+    override fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?): FragmentFriendsBinding {
+        return FragmentFriendsBinding.inflate(layoutInflater)
+    }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        _binding = FragmentFriendsBinding.inflate(inflater, container, false)
-        return binding.root
+    override fun createViewModel(): FriendsViewModel {
+        return ViewModelProvider(this)[FriendsViewModel::class.java]
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.backIV.setOnClickListener {
-            parentFragmentManager.popBackStack()
+            requireActivity().supportFragmentManager.popBackStack()
         }
     }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
 }

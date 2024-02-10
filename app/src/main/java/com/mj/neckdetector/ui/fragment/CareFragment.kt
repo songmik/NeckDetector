@@ -1,28 +1,28 @@
 package com.mj.neckdetector.ui.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
+import com.mj.neckdetector.base.BaseFragment
 import com.mj.neckdetector.databinding.FragmentCareBinding
 import com.mj.neckdetector.utils.SharedPreferencesManager
+import com.mj.neckdetector.viewmodel.fragment.CareViewModel
 import java.util.Calendar
 
-class CareFragment : Fragment() {
+class CareFragment : BaseFragment<FragmentCareBinding, CareViewModel>() {
 
-    private var _binding: FragmentCareBinding? = null
-    private val binding get() = _binding!!
+    override fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?): FragmentCareBinding {
+        return FragmentCareBinding.inflate(layoutInflater)
+    }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        _binding = FragmentCareBinding.inflate(inflater, container, false)
-        return binding.root
+    override fun createViewModel(): CareViewModel {
+        return ViewModelProvider(this)[CareViewModel::class.java]
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        //setCalendarView()
 
         binding.calender.minDate = Calendar.getInstance().timeInMillis
 
@@ -35,24 +35,7 @@ class CareFragment : Fragment() {
 
         // 설정화면으로 돌아가기
         binding.backIV.setOnClickListener {
-            parentFragmentManager.popBackStack()
+            requireActivity().supportFragmentManager.popBackStack()
         }
     }
-
-//    private fun setCalendarView() {
-//        binding.calender.dayBinder = object : MonthDayBinder<DayViewContainer> {
-//            @RequiresApi(Build.VERSION_CODES.O)
-//            override fun bind(container: DayViewContainer, data: CalendarDay) {
-//                container.textView.text = data.date.dayOfMonth.toString()
-//            }
-//
-//            override fun create(view: View) = DayViewContainer(view)
-//        }
-//    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
 }

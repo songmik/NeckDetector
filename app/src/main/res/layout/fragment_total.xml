@@ -11,9 +11,9 @@
         android:id="@+id/nicknameTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/gray22"
         android:layout_marginStart="40dp"
         android:layout_marginTop="80dp"
+        android:textColor="@color/gray22"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -45,9 +45,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/gray22"
         android:layout_marginStart="5dp"
         android:text="입니다."
+        android:textColor="@color/gray22"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="@id/totalTV"
         app:layout_constraintStart_toEndOf="@id/totalTV" />
@@ -116,6 +116,7 @@
         tools:text="꾸북보스" />
 
     <LinearLayout
+        android:id="@+id/explainLL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -127,28 +128,27 @@
 
         <TextView
             android:id="@+id/totalOneTV"
-            android:textColor="@color/gray22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="영원한 꾸북이로 남으실 건가요?"
+            android:textColor="@color/gray22"
             android:textSize="14sp" />
 
         <TextView
             android:id="@+id/totalTwoTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/gray22"
             android:text="지금은 거북목이 높게 측정 되었을 수도 있지만, \n꾸준한 운동과 치료를 통해 호전될 수 있습니다."
+            android:textColor="@color/gray22"
             android:textSize="14sp" />
 
         <TextView
             android:id="@+id/totalThreeTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/gray22"
             android:text="꾸북이탐지기가 관리할 수 있도록 도와드릴게요."
+            android:textColor="@color/gray22"
             android:textSize="14sp" />
-
 
     </LinearLayout>
 
@@ -156,14 +156,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="30dp"
         android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/explainLL">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/reButton"
-            android:layout_width="180dp"
+            android:layout_width="0dp"
             android:layout_height="60dp"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
             android:background="@drawable/rect_solid_10dp_white"
             android:gravity="center"
             android:text="홈으로 가기"
@@ -174,9 +179,11 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/stretchButton"
-            android:layout_width="180dp"
+            android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_marginStart="15dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
             android:background="@drawable/rect_solid_20dp_green2"
             android:gravity="center"
             android:text="목 스트레칭하러 가기"
@@ -186,5 +193,14 @@
             app:layout_constraintBottom_toBottomOf="parent" />
 
     </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/totalFL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

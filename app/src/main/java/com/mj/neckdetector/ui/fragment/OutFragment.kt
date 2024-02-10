@@ -4,18 +4,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.mj.neckdetector.base.BaseFragment
 import com.mj.neckdetector.databinding.FragmentOutBinding
 import com.mj.neckdetector.utils.SharedPreferencesManager
+import com.mj.neckdetector.viewmodel.fragment.OutViewModel
 
-class OutFragment : Fragment() {
+class OutFragment : BaseFragment<FragmentOutBinding, OutViewModel>() {
 
-    private var _binding: FragmentOutBinding ?= null
-    private val binding get() = _binding!!
+    override fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?): FragmentOutBinding {
+        return FragmentOutBinding.inflate(layoutInflater)
+    }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        _binding = FragmentOutBinding.inflate(inflater, container, false)
-        return binding.root
+    override fun createViewModel(): OutViewModel {
+        return ViewModelProvider(this)[OutViewModel::class.java]
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -26,13 +28,7 @@ class OutFragment : Fragment() {
         binding.nicknameTV.text = "$myNickName 님"
 
         binding.backIV.setOnClickListener {
-            parentFragmentManager.popBackStack()
+            requireActivity().supportFragmentManager.popBackStack()
         }
     }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
 }

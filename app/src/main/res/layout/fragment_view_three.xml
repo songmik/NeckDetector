@@ -53,7 +53,7 @@
         android:id="@+id/watchTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:gravity="center"
         android:text="어떻게 해야 할 지 모르겠다면 꾸북이 탐지기가"
         android:textColor="@color/gray22"
@@ -63,6 +63,7 @@
         app:layout_constraintTop_toBottomOf="@id/indicatorLL" />
 
     <LinearLayout
+        android:id="@+id/helpLL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -94,15 +95,17 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="50dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="30dp"
         android:background="@drawable/rect_solid_20dp_green2"
         android:gravity="center"
         android:text="시작하기"
         android:textColor="@color/white"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/helpLL" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

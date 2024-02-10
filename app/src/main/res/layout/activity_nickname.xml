@@ -13,8 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="70dp"
-        android:textColor="@color/gray22"
         android:text="꾸북이 탈출을 위한 \n여정을 시작해요!"
+        android:textColor="@color/gray22"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -56,6 +56,8 @@
         android:text="꾸북이를 찾으러 가볼까요?"
         android:textColor="@color/white"
         android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/nicknameET" />
 
 

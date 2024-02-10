@@ -4,21 +4,20 @@ import android.content.res.AssetManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.view.WindowInsets
-import android.view.WindowInsetsController
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.mj.neckdetector.R
+import com.mj.neckdetector.base.BaseActivity
 import com.mj.neckdetector.databinding.ActivityMeasureBinding
 import com.mj.neckdetector.ui.fragment.TotalFragment
+import com.mj.neckdetector.viewmodel.activity.MeasureViewModel
 import org.tensorflow.lite.Interpreter
 import java.io.FileInputStream
 import java.io.IOException
@@ -26,19 +25,21 @@ import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import java.nio.channels.FileChannel
 
-class MeasureActivity : AppCompatActivity() {
+class MeasureActivity : BaseActivity<ActivityMeasureBinding, MeasureViewModel>() {
 
-    private lateinit var binding: ActivityMeasureBinding
     private lateinit var tflite: Interpreter
 
     private val modelInputSize = 224
+    override fun getViewBinding(): ActivityMeasureBinding {
+        return ActivityMeasureBinding.inflate(layoutInflater)
+    }
+
+    override fun createViewModel(): MeasureViewModel {
+        return ViewModelProvider(this)[MeasureViewModel::class.java]
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMeasureBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        hideBottomBar()
 
         val bundle = intent.extras
         val galleryUriString: Uri ?= intent.getParcelableExtra("galleryUri")
@@ -210,24 +211,8 @@ class MeasureActivity : AppCompatActivity() {
 
     private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
-            .replace(R.id.measureContainer, fragment)
+            .replace(R.id.measureFL, fragment)
             .addToBackStack(null)
             .commit()
-    }
-
-    private fun hideBottomBar() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            window.setDecorFitsSystemWindows(false)
-
-            val controller = window.insetsController
-            if (controller != null) {
-                // navigationBars -> 하단바 제거
-                controller.hide(WindowInsets.Type.navigationBars())
-                controller.systemBarsBehavior = WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
-            }
-        } else {
-            window.decorView.systemUiVisibility =
-                (View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN)
-        }
     }
 }

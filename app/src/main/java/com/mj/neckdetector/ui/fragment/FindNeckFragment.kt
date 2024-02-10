@@ -5,73 +5,72 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.mj.neckdetector.R
+import com.mj.neckdetector.base.BaseFragment
 import com.mj.neckdetector.databinding.FragmentFindNeckBinding
+import com.mj.neckdetector.viewmodel.fragment.FindNeckViewModel
 
-class FindNeckFragment : Fragment() {
+class FindNeckFragment : BaseFragment<FragmentFindNeckBinding, FindNeckViewModel>() {
 
-    private var _binding: FragmentFindNeckBinding ?= null
-    private val binding get() = _binding!!
+    override fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?): FragmentFindNeckBinding {
+        return FragmentFindNeckBinding.inflate(layoutInflater)
+    }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        _binding = FragmentFindNeckBinding.inflate(inflater, container,false)
-        return binding.root
+    override fun createViewModel(): FindNeckViewModel {
+        return ViewModelProvider(this)[FindNeckViewModel::class.java]
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val pointFragment = PointFragment()
+
         binding.backIV.setOnClickListener {
-            parentFragmentManager.popBackStack()
+            requireActivity().supportFragmentManager.popBackStack()
         }
 
         binding.exerciseOne.setOnClickListener {
-            replaceFragment(PointFragment())
+            replaceFragment(pointFragment)
         }
 
         binding.exerciseTwo.setOnClickListener {
-            replaceFragment(PointFragment())
+            replaceFragment(pointFragment)
         }
 
         binding.exerciseThree.setOnClickListener {
-            replaceFragment(PointFragment())
+            replaceFragment(pointFragment)
         }
 
         binding.exerciseFour.setOnClickListener {
-            replaceFragment(PointFragment())
+            replaceFragment(pointFragment)
         }
 
         binding.exerciseFive.setOnClickListener {
-            replaceFragment(PointFragment())
+            replaceFragment(pointFragment)
         }
 
         binding.exerciseSix.setOnClickListener {
-            replaceFragment(PointFragment())
+            replaceFragment(pointFragment)
         }
 
         binding.exerciseSeven.setOnClickListener {
-            replaceFragment(PointFragment())
+            replaceFragment(pointFragment)
         }
 
         binding.exerciseEight.setOnClickListener {
-            replaceFragment(PointFragment())
+            replaceFragment(pointFragment)
         }
 
         binding.exerciseNine.setOnClickListener {
-            replaceFragment(PointFragment())
+            replaceFragment(pointFragment)
         }
     }
 
     private fun replaceFragment(fragment: Fragment) {
-        parentFragmentManager.beginTransaction()
-            .replace(R.id.findNeckCL, fragment)
+        requireActivity().supportFragmentManager.beginTransaction()
+            .replace(R.id.findNeckFL, fragment)
             .addToBackStack(null)
             .commit()
     }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
 }

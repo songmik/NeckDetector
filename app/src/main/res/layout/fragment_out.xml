@@ -9,13 +9,13 @@
 
     <LinearLayout
         android:id="@+id/mainLL"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="50dp"
-        android:gravity="center"
+        android:layout_marginEnd="20dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@id/scrollview"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -25,19 +25,35 @@
             android:layout_height="24dp"
             android:background="@drawable/baseline_arrow_back" />
 
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
         <TextView
             android:id="@+id/mainSetting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="120dp"
-            android:text="탈출일기"
+            android:text="탈출일지"
             android:textColor="@color/gray22"
             android:textSize="18sp"
             android:textStyle="bold" />
 
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp" />
+
     </LinearLayout>
 
     <ScrollView
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mainLL"
         android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

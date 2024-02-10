@@ -15,20 +15,22 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
-import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.mj.neckdetector.R
+import com.mj.neckdetector.base.BaseFragment
 import com.mj.neckdetector.databinding.FragmentTotalBinding
 import com.mj.neckdetector.ui.activity.MainActivity
 import com.mj.neckdetector.utils.SharedPreferencesManager
+import com.mj.neckdetector.viewmodel.fragment.TotalViewModel
 
-class TotalFragment : Fragment() {
+class TotalFragment : BaseFragment<FragmentTotalBinding, TotalViewModel>() {
 
-    private var _binding: FragmentTotalBinding ?= null
-    private val binding get() = _binding!!
+    override fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?): FragmentTotalBinding {
+        return FragmentTotalBinding.inflate(layoutInflater)
+    }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        _binding = FragmentTotalBinding.inflate(inflater, container, false)
-        return binding.root
+    override fun createViewModel(): TotalViewModel {
+        return ViewModelProvider(this)[TotalViewModel::class.java]
     }
 
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
@@ -116,8 +118,8 @@ class TotalFragment : Fragment() {
         }
 
         binding.stretchButton.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.totalCL, FindNeckFragment())
+            requireActivity().supportFragmentManager.beginTransaction()
+                .add(R.id.totalFL, FindNeckFragment())
                 .addToBackStack(null)
                 .commit()
         }
@@ -137,7 +139,6 @@ class TotalFragment : Fragment() {
 
         return screenshot
     }
-
 
     private fun saveScreenshot(screenshot: Bitmap) {
         val contentResolver: ContentResolver = requireContext().contentResolver
@@ -168,10 +169,4 @@ class TotalFragment : Fragment() {
 
         dialog.show()
     }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
 }

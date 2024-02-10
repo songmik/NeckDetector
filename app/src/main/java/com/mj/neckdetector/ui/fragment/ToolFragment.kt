@@ -4,18 +4,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.mj.neckdetector.base.BaseFragment
 import com.mj.neckdetector.databinding.FragmentToolBinding
 import com.mj.neckdetector.ui.activity.MainActivity
+import com.mj.neckdetector.viewmodel.fragment.ToolViewModel
 
-class ToolFragment : Fragment() {
+class ToolFragment : BaseFragment<FragmentToolBinding, ToolViewModel>() {
 
-    private var _binding: FragmentToolBinding? = null
-    private val binding get() = _binding!!
+    override fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?): FragmentToolBinding {
+        return FragmentToolBinding.inflate(layoutInflater)
+    }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        _binding = FragmentToolBinding.inflate(inflater, container, false)
-        return binding.root
+    override fun createViewModel(): ToolViewModel {
+        return ViewModelProvider(this)[ToolViewModel::class.java]
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -25,10 +27,4 @@ class ToolFragment : Fragment() {
             (activity as MainActivity).switchToCameraFragment()
         }
     }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
 }

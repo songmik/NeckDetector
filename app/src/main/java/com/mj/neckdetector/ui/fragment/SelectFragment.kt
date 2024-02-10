@@ -7,20 +7,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.mj.neckdetector.R
+import com.mj.neckdetector.base.BaseFragment
 import com.mj.neckdetector.databinding.FragmentSelectBinding
 import com.mj.neckdetector.ui.activity.MeasureActivity
 import com.mj.neckdetector.ui.fragment.navigation.CameraFragment
+import com.mj.neckdetector.viewmodel.fragment.SelectViewModel
 
-class SelectFragment : Fragment() {
+class SelectFragment : BaseFragment<FragmentSelectBinding, SelectViewModel>() {
 
-    private var _binding: FragmentSelectBinding ?= null
-    private val binding get() = _binding!!
+    override fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?): FragmentSelectBinding {
+        return FragmentSelectBinding.inflate(layoutInflater)
+    }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        _binding = FragmentSelectBinding.inflate(inflater, container, false)
-        return binding.root
+    override fun createViewModel(): SelectViewModel {
+        return ViewModelProvider(this)[SelectViewModel::class.java]
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -41,7 +43,7 @@ class SelectFragment : Fragment() {
             binding.reTV.setTextColor(ContextCompat.getColor(requireContext(), R.color.green2))
 
             val cameraFragment = CameraFragment()
-            parentFragmentManager.beginTransaction()
+            requireActivity().supportFragmentManager.beginTransaction()
                 .replace(R.id.selectContainer, cameraFragment)
                 .addToBackStack(null)
                 .commit()
@@ -57,10 +59,4 @@ class SelectFragment : Fragment() {
             startActivity(intent)
         }
     }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
 }

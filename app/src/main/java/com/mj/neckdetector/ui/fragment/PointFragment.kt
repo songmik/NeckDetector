@@ -5,17 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.mj.neckdetector.base.BaseFragment
 import com.mj.neckdetector.databinding.FragmentPointBinding
+import com.mj.neckdetector.viewmodel.fragment.PointViewModel
 
-class PointFragment : Fragment() {
+class PointFragment : BaseFragment<FragmentPointBinding, PointViewModel>() {
 
-    private var _binding: FragmentPointBinding ?= null
-    private val binding get() = _binding!!
+    override fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?): FragmentPointBinding {
+        return FragmentPointBinding.inflate(layoutInflater)
+    }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        _binding = FragmentPointBinding.inflate(inflater, container, false)
-        return binding.root
+    override fun createViewModel(): PointViewModel {
+        return ViewModelProvider(this)[PointViewModel::class.java]
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -23,14 +25,7 @@ class PointFragment : Fragment() {
 
         binding.nextButton.setOnClickListener {
             Toast.makeText(context, "10원이 적립되었습니다.", Toast.LENGTH_SHORT).show()
-            parentFragmentManager.popBackStack()
-
+            requireActivity().supportFragmentManager.popBackStack()
         }
     }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
 }

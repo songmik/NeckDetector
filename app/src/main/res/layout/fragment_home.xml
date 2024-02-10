@@ -2,49 +2,59 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainCL"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:id="@+id/mainCL"
     tools:context=".ui.fragment.navigation.HomeFragment">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/homeMainCL"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="0dp">
+
+            <View
+                android:id="@+id/topView"
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/notificationRingIV"
                 android:layout_width="7dp"
                 android:layout_height="7dp"
-                android:layout_marginTop="46dp"
-                android:layout_marginEnd="46dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="42dp"
                 android:background="@drawable/baseline_circle_red"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/topView" />
 
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="27dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginEnd="50dp"
+                android:layout_width="22dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="52dp"
+                android:layout_marginEnd="45dp"
                 android:background="@drawable/empty_ring"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/topView" />
 
             <TextView
                 android:id="@+id/nameTV"
-                android:textColor="@color/gray22"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="100dp"
+                android:textColor="@color/gray22"
                 android:textSize="25sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -52,11 +62,11 @@
 
             <TextView
                 android:id="@+id/stTV"
-                android:textColor="@color/gray22"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:text="스트레칭하러 갈까요?"
+                android:textColor="@color/gray22"
                 android:textSize="25sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/nameTV" />
@@ -120,8 +130,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/gray22"
                         android:text="꾸북이 측정소"
+                        android:textColor="@color/gray22"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -152,10 +162,10 @@
                     android:padding="17dp">
 
                     <TextView
-                        android:textColor="@color/gray22"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="꾸북이 도감"
+                        android:textColor="@color/gray22"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -198,10 +208,10 @@
                     android:padding="17dp">
 
                     <TextView
-                        android:textColor="@color/gray22"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="꾸북이 사냥"
+                        android:textColor="@color/gray22"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -231,10 +241,10 @@
                     android:padding="17dp">
 
                     <TextView
-                        android:textColor="@color/gray22"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="꾸북이 감시"
+                        android:textColor="@color/gray22"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -267,10 +277,10 @@
                 app:layout_constraintTop_toBottomOf="@id/nextMeasureLL">
 
                 <TextView
-                    android:textColor="@color/gray22"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="이 상품 놓치지 마세요!"
+                    android:textColor="@color/gray22"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
@@ -279,20 +289,30 @@
                     android:layout_height="0dp"
                     android:layout_weight="1" />
 
-                <TextView
-                    android:textColor="@color/gray22"
+                <LinearLayout
+                    android:id="@+id/goToBuyLL"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="더보기"
-                    android:textSize="14sp" />
-
-                <ImageView
-                    android:layout_width="17dp"
-                    android:layout_height="17dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="1dp"
                     android:layout_marginEnd="35dp"
-                    android:background="@drawable/next_gray" />
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="더보기"
+                        android:textColor="@color/gray22"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="1dp"
+                        android:background="@drawable/next_gray" />
+
+
+                </LinearLayout>
+
 
             </LinearLayout>
 
@@ -457,5 +477,14 @@
 
 
     </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/homeMainFL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

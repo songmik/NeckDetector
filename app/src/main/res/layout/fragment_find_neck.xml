@@ -8,341 +8,352 @@
     android:background="@color/white"
     tools:context=".ui.fragment.FindNeckFragment">
 
-    <LinearLayout
-        android:id="@+id/mainLL"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="50dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@id/scrollview"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/backIV"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:background="@drawable/baseline_arrow_back" />
-
-        <TextView
-            android:id="@+id/mainSetting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="110dp"
-            android:text="목 찾으러 가기"
-            android:textColor="@color/gray22"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
-    <ScrollView
-        android:id="@+id/scrollview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="90dp">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
+            android:id="@+id/mainLL"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <HorizontalScrollView
-                android:id="@+id/horiSV"
+            <ImageView
+                android:id="@+id/backIV"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/baseline_arrow_back" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/mainSetting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:text="목 찾으러 가기"
+                android:textColor="@color/gray22"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-                <LinearLayout
-                    android:id="@+id/indexLL"
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="90dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mainLL">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <HorizontalScrollView
+                    android:id="@+id/horiSV"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"
-                    android:orientation="horizontal"
+                    android:layout_height="wrap_content"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <LinearLayout
+                        android:id="@+id/indexLL"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="데일리루틴"
+                                android:textColor="@color/gray22"
+                                android:textSize="18sp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:background="@color/black" />
+
+                        </LinearLayout>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:layout_marginStart="15dp"
+                            android:text="장기루틴"
                             android:textColor="@color/gray22"
-                            android:text="데일리루틴"
                             android:textSize="18sp" />
 
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="2dp"
-                            android:background="@color/black" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="15dp"
+                            android:text="인기운동"
+                            android:textColor="@color/gray22"
+                            android:textSize="18sp" />
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="15dp"
+                            android:text="부위별운동"
+                            android:textColor="@color/gray22"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="15dp"
+                            android:text="마사지"
+                            android:textColor="@color/gray22"
+                            android:textSize="18sp" />
 
                     </LinearLayout>
 
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginStart="15dp"
-                        android:textColor="@color/gray22"
-                        android:text="장기루틴"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:textColor="@color/gray22"
-                        android:layout_marginStart="15dp"
-                        android:text="인기운동"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginStart="15dp"
-                        android:textColor="@color/gray22"
-                        android:text="부위별운동"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:textColor="@color/gray22"
-                        android:layout_marginStart="15dp"
-                        android:text="마사지"
-                        android:textSize="18sp" />
-
-                </LinearLayout>
-
-
-            </HorizontalScrollView>
-
-            <LinearLayout
-                android:id="@+id/firstLL"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="30dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/horiSV">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="어깨 펼 시간이에요!"
-                    android:textColor="@color/gray22"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-
-            </LinearLayout>
-
-            <HorizontalScrollView
-                android:id="@+id/firstHSV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/firstLL">
+                </HorizontalScrollView>
 
                 <LinearLayout
-                    android:id="@+id/firstPhotoLL"
+                    android:id="@+id/firstLL"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="35dp"
-                    android:orientation="horizontal">
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="30dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/horiSV">
 
-                    <ImageView
-                        android:id="@+id/exerciseOne"
-                        android:layout_width="180dp"
-                        android:layout_height="220dp"
-                        android:background="@drawable/stretch" />
-
-                    <ImageView
-                        android:id="@+id/exerciseFour"
-                        android:layout_width="180dp"
-                        android:layout_height="220dp"
-                        android:layout_marginStart="20dp"
-                        android:background="@drawable/stretch_two" />
-
-                    <ImageView
-                        android:id="@+id/exerciseFive"
-                        android:layout_width="180dp"
-                        android:layout_height="220dp"
-                        android:layout_marginStart="20dp"
-                        android:background="@drawable/stretch_seven" />
-
-                    <View
-                        android:layout_width="40dp"
-                        android:layout_height="wrap_content" />
-
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="어깨 펼 시간이에요!"
+                        android:textColor="@color/gray22"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
-
-            </HorizontalScrollView>
-
-
-            <LinearLayout
-                android:id="@+id/secondLL"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="30dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/firstHSV">
-
-                <TextView
+                <HorizontalScrollView
+                    android:id="@+id/firstHSV"
                     android:layout_width="wrap_content"
-                    android:textColor="@color/gray22"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="바른 자세를 위한 등근육 운동"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/firstLL">
 
+                    <LinearLayout
+                        android:id="@+id/firstPhotoLL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="35dp"
+                        android:orientation="horizontal">
 
-            </LinearLayout>
+                        <ImageView
+                            android:id="@+id/exerciseOne"
+                            android:layout_width="180dp"
+                            android:layout_height="220dp"
+                            android:background="@drawable/stretch" />
 
+                        <ImageView
+                            android:id="@+id/exerciseFour"
+                            android:layout_width="180dp"
+                            android:layout_height="220dp"
+                            android:layout_marginStart="20dp"
+                            android:background="@drawable/stretch_two" />
 
-            <HorizontalScrollView
-                android:id="@+id/secondHSV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/secondLL">
+                        <ImageView
+                            android:id="@+id/exerciseFive"
+                            android:layout_width="180dp"
+                            android:layout_height="220dp"
+                            android:layout_marginStart="20dp"
+                            android:background="@drawable/stretch_seven" />
+
+                        <View
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
 
                 <LinearLayout
-                    android:id="@+id/secondPhotoLL"
+                    android:id="@+id/secondLL"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="35dp"
-                    android:orientation="horizontal">
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="30dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/firstHSV">
 
-                    <ImageView
-                        android:id="@+id/exerciseTwo"
-                        android:layout_width="180dp"
-                        android:layout_height="220dp"
-                        android:background="@drawable/stretch_three" />
-
-                    <ImageView
-                        android:id="@+id/exerciseSix"
-                        android:layout_width="180dp"
-                        android:layout_height="220dp"
-                        android:layout_marginStart="20dp"
-                        android:background="@drawable/stretch_four" />
-
-                    <ImageView
-                        android:id="@+id/exerciseSeven"
-                        android:layout_width="180dp"
-                        android:layout_height="220dp"
-                        android:layout_marginStart="20dp"
-                        android:background="@drawable/stretch_eight" />
-
-                    <View
-                        android:layout_width="40dp"
-                        android:layout_height="wrap_content" />
-
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="바른 자세를 위한 등근육 운동"
+                        android:textColor="@color/gray22"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
-            </HorizontalScrollView>
-
-
-            <LinearLayout
-                android:id="@+id/threeLL"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="30dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/secondHSV">
-
-                <TextView
+                <HorizontalScrollView
+                    android:id="@+id/secondHSV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:textColor="@color/gray22"
-                    android:text="허리가 뻐근할 때 해볼까요?"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/secondLL">
 
+                    <LinearLayout
+                        android:id="@+id/secondPhotoLL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="35dp"
+                        android:orientation="horizontal">
 
-            </LinearLayout>
+                        <ImageView
+                            android:id="@+id/exerciseTwo"
+                            android:layout_width="180dp"
+                            android:layout_height="220dp"
+                            android:background="@drawable/stretch_three" />
 
-            <HorizontalScrollView
-                android:id="@+id/threeHSV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/threeLL">
+                        <ImageView
+                            android:id="@+id/exerciseSix"
+                            android:layout_width="180dp"
+                            android:layout_height="220dp"
+                            android:layout_marginStart="20dp"
+                            android:background="@drawable/stretch_four" />
+
+                        <ImageView
+                            android:id="@+id/exerciseSeven"
+                            android:layout_width="180dp"
+                            android:layout_height="220dp"
+                            android:layout_marginStart="20dp"
+                            android:background="@drawable/stretch_eight" />
+
+                        <View
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
 
                 <LinearLayout
-                    android:id="@+id/threePhotoLL"
+                    android:id="@+id/threeLL"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="35dp"
-                    android:orientation="horizontal">
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="30dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/secondHSV">
 
-                    <ImageView
-                        android:id="@+id/exerciseThree"
-                        android:layout_width="180dp"
-                        android:layout_height="220dp"
-                        android:background="@drawable/stretch_five" />
-
-                    <ImageView
-                        android:id="@+id/exerciseEight"
-                        android:layout_width="180dp"
-                        android:layout_height="220dp"
-                        android:layout_marginStart="20dp"
-                        android:background="@drawable/stretch_six" />
-
-                    <ImageView
-                        android:id="@+id/exerciseNine"
-                        android:layout_width="180dp"
-                        android:layout_height="220dp"
-                        android:layout_marginStart="20dp"
-                        android:background="@drawable/stretch_nine" />
-
-                    <View
-                        android:layout_width="40dp"
-                        android:layout_height="wrap_content" />
-
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="허리가 뻐근할 때 해볼까요?"
+                        android:textColor="@color/gray22"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
-            </HorizontalScrollView>
+                <HorizontalScrollView
+                    android:id="@+id/threeHSV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/threeLL">
 
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="10dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/threeHSV" />
+                    <LinearLayout
+                        android:id="@+id/threePhotoLL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="35dp"
+                        android:orientation="horizontal">
 
+                        <ImageView
+                            android:id="@+id/exerciseThree"
+                            android:layout_width="180dp"
+                            android:layout_height="220dp"
+                            android:background="@drawable/stretch_five" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <ImageView
+                            android:id="@+id/exerciseEight"
+                            android:layout_width="180dp"
+                            android:layout_height="220dp"
+                            android:layout_marginStart="20dp"
+                            android:background="@drawable/stretch_six" />
 
+                        <ImageView
+                            android:id="@+id/exerciseNine"
+                            android:layout_width="180dp"
+                            android:layout_height="220dp"
+                            android:layout_marginStart="20dp"
+                            android:background="@drawable/stretch_nine" />
 
-    </ScrollView>
+                        <View
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/threeHSV" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/findNeckFL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

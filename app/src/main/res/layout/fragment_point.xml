@@ -12,10 +12,10 @@
         android:id="@+id/mainTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
         android:layout_marginTop="80dp"
         android:text="훌륭합니다! \n탈출이 가까워지고 있어요!"
         android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,40 +24,41 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="30dp"
-        app:layout_constraintWidth_percent="0.5"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintTop_toBottomOf="@id/mainTV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:lottie_fileName="check.json"
+        app:layout_constraintTop_toBottomOf="@id/mainTV"
+        app:layout_constraintWidth_percent="0.5"
         app:lottie_autoPlay="true"
-        app:lottie_loop="false"/>
+        app:lottie_fileName="check.json"
+        app:lottie_loop="false" />
 
     <LinearLayout
+        android:id="@+id/pointTextLL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:orientation="vertical"
         android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/animationView">
 
         <TextView
-            android:layout_marginStart="3dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
+            android:layout_marginStart="3dp"
             android:text="오늘의 운동 완료"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
-            android:layout_marginStart="3dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
+            android:layout_marginStart="3dp"
             android:text="포인트가 적립되었습니다."
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -67,15 +68,15 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="50dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="40dp"
         android:background="@drawable/rect_solid_20dp_green2"
         android:gravity="center"
         android:text="포인트 적립받기 (+10P)"
         android:textColor="@color/white"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent" />
-
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pointTextLL" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

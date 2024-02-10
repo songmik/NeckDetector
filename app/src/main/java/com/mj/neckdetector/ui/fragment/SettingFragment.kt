@@ -7,20 +7,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
-import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.mj.neckdetector.NeckApplication
+import com.mj.neckdetector.base.BaseFragment
 import com.mj.neckdetector.databinding.FragmentSettingBinding
 import com.mj.neckdetector.ui.activity.SplashActivity
 import com.mj.neckdetector.utils.SharedPreference
+import com.mj.neckdetector.viewmodel.fragment.SettingViewModel
 
-class SettingFragment : Fragment() {
+class SettingFragment : BaseFragment<FragmentSettingBinding, SettingViewModel>() {
 
-    private var _binding : FragmentSettingBinding ?= null
-    private val binding get() = _binding!!
+    override fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?): FragmentSettingBinding {
+        return FragmentSettingBinding.inflate(layoutInflater)
+    }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        _binding = FragmentSettingBinding.inflate(inflater, container, false)
-        return binding.root
+    override fun createViewModel(): SettingViewModel {
+        return ViewModelProvider(this)[SettingViewModel::class.java]
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -39,7 +41,7 @@ class SettingFragment : Fragment() {
         }
 
         binding.backIV.setOnClickListener {
-            parentFragmentManager.popBackStack()
+            requireActivity().supportFragmentManager.popBackStack()
         }
     }
 
@@ -53,10 +55,4 @@ class SettingFragment : Fragment() {
         builder.setNegativeButton("취소", null)
         builder.show()
     }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
 }

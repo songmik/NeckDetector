@@ -20,21 +20,20 @@ import androidx.camera.core.ImageCaptureException
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.mj.neckdetector.R
+import com.mj.neckdetector.base.BaseFragment
 import com.mj.neckdetector.databinding.FragmentCameraBinding
 import com.mj.neckdetector.ui.activity.MeasureActivity
 import com.mj.neckdetector.ui.fragment.SelectFragment
+import com.mj.neckdetector.viewmodel.fragment.navigation.CameraViewModel
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.Locale
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
-class CameraFragment : Fragment() {
-
-    private var _binding: FragmentCameraBinding? = null
-    private val binding get() = _binding!!
+class CameraFragment : BaseFragment<FragmentCameraBinding, CameraViewModel>() {
 
     private var imageCapture: ImageCapture? = null
     private var lensFacingDirection = CameraSelector.DEFAULT_BACK_CAMERA
@@ -53,9 +52,12 @@ class CameraFragment : Fragment() {
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        _binding = FragmentCameraBinding.inflate(inflater, container, false)
-        return binding.root
+    override fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?): FragmentCameraBinding {
+        return FragmentCameraBinding.inflate(layoutInflater)
+    }
+
+    override fun createViewModel(): CameraViewModel {
+        return ViewModelProvider(this)[CameraViewModel::class.java]
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -128,7 +130,7 @@ class CameraFragment : Fragment() {
                     bundle.putParcelable("photoUri", savedUri)
                     selectFragment.arguments = bundle
 
-                    parentFragmentManager.beginTransaction()
+                    requireActivity().supportFragmentManager.beginTransaction()
                         .replace(R.id.cameraContainer, selectFragment)
                         .addToBackStack(null)
                         .commit()
@@ -183,10 +185,4 @@ class CameraFragment : Fragment() {
         return if (mediaDir != null && mediaDir.exists())
             mediaDir else requireContext().cacheDir
     }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
 }
