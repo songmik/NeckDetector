@@ -11,3 +11,13 @@
 - AI Model (Tensorflow-lite)
 - Lottie
 - ShearedPreference
+
+  
+
+#### Main Screen
+- Main
+<img width="400" src="https://github.com/songmik/NeckDetector/assets/86704889/e6e1b584-7a93-48f9-9ef3-d52bafa95b0f">
+
+- Camera
+
+<img width="400" src="https://github.com/songmik/NeckDetector/assets/86704889/ef323d56-1924-41df-a18e-73874e8dff20">
